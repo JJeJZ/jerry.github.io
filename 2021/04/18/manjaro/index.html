@@ -456,6 +456,12 @@ UUID&#x3D;7A90-4B4B                            &#x2F;boot&#x2F;efi      vfat    
 UUID&#x3D;83a985ad-4bda-4d15-be60-1164b46bc29e &#x2F;              ext4    defaults,noatime 0 1
 UUID&#x3D;D0405C2B405C1A94                     &#x2F;run&#x2F;media&#x2F;jz&#x2F;新加卷  ntfs  defaults 0 0
 UUID&#x3D;FAEC90F5EC90ACFF                     &#x2F;run&#x2F;media&#x2F;jz&#x2F;Windows-SSD  ntfs  defaults 0 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="某天突然开机进不了图形界面"><a href="#某天突然开机进不了图形界面" class="headerlink" title="某天突然开机进不了图形界面"></a>某天突然开机进不了图形界面</h2><p>不要随意更新！！特别是不要用sudo pacman -Su更新，尽量用图形界面里面的更新。<br>一般是显卡驱动损坏了。可以ctrl + alt + fn切换到命令行然后startx查看错误</p>
+<p>首先联网，可以先进windows联网，然后manjaro会保持连接的状态。然后重装nvidia驱动</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">sudo mhwd -r pci video-nvidia
+sudo mhwd -a pci nonfree 0300
+reboot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
